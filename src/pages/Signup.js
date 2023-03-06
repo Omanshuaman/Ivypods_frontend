@@ -71,7 +71,7 @@ const Signup = () => {
       });
       localStorage.setItem("userInfo", JSON.stringify(data));
       setLoading(false);
-      history.push("/chats");
+      document.location.reload();
     } catch (error) {
       toast({
         title: "Error creating account.",

@@ -54,3 +54,8 @@ body {
 .login-button a:hover {
   transform: translateZ(-25px) rotateX(-90deg);
 }
+.login {
+  position: absolute;
+  right: 10px;
+  top: 10px;
+}

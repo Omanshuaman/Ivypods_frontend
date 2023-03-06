@@ -133,19 +133,6 @@ const Login = ({ setonClick1 }) => {
       >
         Login
       </Button>
-
-      <Button
-        w={"full"}
-        maxW={"md"}
-        colorScheme="blue"
-        style={{ marginTop: "1rem" }}
-        leftIcon={<FcGoogle />}
-        onClick={google}
-      >
-        <Center>
-          <h1>Sign in with Google</h1>
-        </Center>
-      </Button>
     </VStack>
   );
 };

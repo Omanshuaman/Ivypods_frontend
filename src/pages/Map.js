@@ -27,7 +27,7 @@ import {
 import { ChatState } from "../Context/ChatProvider";
 import { useHistory } from "react-router-dom";
 import jwt_decode from "jwt-decode";
-
+import Tables from "./Table";
 function Map() {
   const myStorage = window.localStorage;
   const mapRef = React.useRef();
@@ -63,7 +63,6 @@ function Map() {
   useEffect(() => {
     const keys = Object.keys(pins).slice(0, 15);
     const arr = keys.map((key) => pins[key]);
-    console.log(arr);
     setMarkers(arr);
   }, [pins]);
   const submitHandler = async () => {
@@ -88,23 +87,28 @@ function Map() {
     <div class="whole">
       <div class="header">
         {user ? (
-          <Menu>
-            <MenuButton as={Button} rightIcon={<ChevronDownIcon />}>
-              <Avatar
-                size={"sm"}
-                cursor="pointer"
-                name={user.name}
-                src={user.pic}
-              />
-            </MenuButton>
-            <MenuList>
-              <ProfileModal user={user}>
-                <MenuItem>My Profile</MenuItem>
-              </ProfileModal>
-              <MenuDivider />
-              <MenuItem onClick={logoutHandler}>Logout</MenuItem>
-            </MenuList>
-          </Menu>
+          <>
+            <div class="login">
+              <Menu>
+                <MenuButton as={Button} rightIcon={<ChevronDownIcon />}>
+                  <Avatar
+                    size={"sm"}
+                    cursor="pointer"
+                    name={user.name}
+                    src={user.pic}
+                  />
+                </MenuButton>
+                <MenuList>
+                  <ProfileModal user={user}>
+                    <MenuItem>My Profile</MenuItem>
+                  </ProfileModal>
+                  <MenuDivider />
+                  <MenuItem onClick={logoutHandler}>Logout</MenuItem>
+                </MenuList>
+              </Menu>
+            </div>
+            <Tables></Tables>
+          </>
         ) : (
           <div>
             <span class="login-button">

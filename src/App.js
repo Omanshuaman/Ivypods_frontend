@@ -6,7 +6,7 @@ import Map from "./pages/Map";
 function App() {
   return (
     <div className="App">
-      <Route path="/" component={Map} exact />
+      <Route exact path="/" component={Map} />
     </div>
   );
 }
