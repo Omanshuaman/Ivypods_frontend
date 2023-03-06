@@ -88,10 +88,6 @@ const Login = ({ setonClick1 }) => {
     }
   };
 
-  const google = async () => {
-    window.location.href = "http://localhost:5000/auth/google";
-  };
-
   return (
     <VStack spacing={"5px"}>
       <FormControl id="email" isRequired>

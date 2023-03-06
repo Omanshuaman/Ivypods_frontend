@@ -87,7 +87,7 @@ const List = () => {
         },
       };
       const { data } = await axios.delete(
-        "http://localhost:5000/api/todo/delete",
+        "https://ivypodsbackend.up.railway.app/api/todo/delete",
         {
           headers: {
             Authorization: `Bearer ${user.token}`,
@@ -112,7 +112,7 @@ const List = () => {
         },
       };
       const { data } = await axios.put(
-        "http://localhost:5000/api/todo/rename",
+        "https://ivypodsbackend.up.railway.app/api/todo/rename",
         {
           chatId: id,
           chatName: name,
