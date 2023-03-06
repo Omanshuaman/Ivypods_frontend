@@ -65,24 +65,7 @@ function Map() {
     const arr = keys.map((key) => pins[key]);
     setMarkers(arr);
   }, [pins]);
-  const submitHandler = async () => {
-    try {
-      const cookieValue = document.cookie
-        .split(";")
-        .find((c) => c.trim().startsWith("token="));
-      if (!cookieValue) return;
-      const decoded = jwt_decode(cookieValue.split("=")[1]);
-      const res = await axios.get(`/api/user/${decoded.id}`);
-      localStorage.setItem("userInfo", JSON.stringify(res.data[0]));
-      setUser(res.data[0]);
-    } catch (error) {
-      console.error(error);
-    }
-  };
 
-  useEffect(() => {
-    submitHandler();
-  }, []);
   return (
     <div class="whole">
       <div class="header">

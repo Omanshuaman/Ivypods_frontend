@@ -50,7 +50,10 @@ const Table = () => {
           Authorization: `Bearer ${user.token}`,
         },
       };
-      const { data } = await axios.get("/api/todo/organize", config);
+      const { data } = await axios.get(
+        "https://ivypodsbackend.up.railway.app/api/todo/organize",
+        config
+      );
 
       setDetails(data);
     } catch (error) {}
@@ -68,7 +71,10 @@ const Table = () => {
     };
 
     try {
-      const res = await axios.post("/api/todo", newPin);
+      const res = await axios.post(
+        "https://ivypodsbackend.up.railway.app/api/todo",
+        newPin
+      );
       setPins([...pins, res.data]);
       //   document.location.reload();
     } catch (err) {

@@ -58,7 +58,7 @@ const Signup = () => {
         },
       };
       const { data } = await axios.post(
-        "/api/user",
+        "https://ivypodsbackend.up.railway.app/api/user",
         { name, email, password },
         config
       );
